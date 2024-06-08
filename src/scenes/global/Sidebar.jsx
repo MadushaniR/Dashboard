@@ -68,28 +68,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
         >
           <ProSidebar collapsed={isCollapsed}>
             <Menu iconShape="square">
-              <MenuItem
-                onClick={() => setIsCollapsed(!isCollapsed)}
-                icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-                style={{
-                  margin: '10px 0 20px 0',
-                  color: colors.grey[100],
-                }}
-              >
-                {!isCollapsed && (
-                  <Box
-                    display="flex"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    ml="15px"
-                  >
-                    <div variant="h3" color={colors.primary[1300]}>
-                      LAVONTECH
-                    </div>
-                  </Box>
-                )}
-              </MenuItem>
-
+              <div style={{fontSize:"22px",fontWeight:"700",textAlign:"center",color:"rgb(255, 227, 163)",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
               <Box paddingLeft={isCollapsed ? undefined : '10%'}>
                 <Item
                   title="Dashboard"
