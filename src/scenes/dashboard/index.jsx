@@ -2,10 +2,8 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import PersonIcon from "@mui/icons-material/Person";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 
@@ -14,10 +12,10 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="20px" height="calc(100vh - 40px)" overflow="auto" backgroundColor={colors.blueAccent[1000]}>
+    <Box m="20px" height="calc(100vh - 40px)" backgroundColor={colors.blueAccent[1000]}>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-      <Header title="DASHBOARD" subtitle="Welcome to your dashbord" />
+        <Header title="DASHBOARD" subtitle="Welcome to your dashbord" />
         <Button
           sx={{
             backgroundColor: colors.redAccent[500],
@@ -121,7 +119,7 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-          <Typography variant="h5" fontWeight="bold" ml="10px">Yearly Sales</Typography>
+            <Typography variant="h5" fontWeight="bold" ml="10px">Yearly Sales</Typography>
             <TrafficIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
@@ -136,7 +134,6 @@ const Dashboard = () => {
           gridRow="span 2"
           backgroundColor={colors.primary[1400]}
           p="20px"
-          overflow="auto"
           borderRadius="10px"
         >
           {/* <Typography variant="h6" fontWeight="bold" mb="20px">
