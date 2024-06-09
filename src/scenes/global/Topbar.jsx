@@ -25,7 +25,7 @@ const Topbar = ({ setIsHidden }) => {
 
         {/* SEARCH BAR */}
         <Box display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
-          <InputBase sx={{ ml: 2 }} placeholder="Search" />
+          <InputBase sx={{ ml: 2 }} placeholder="Search..." />
           <IconButton type="button" sx={{ p: 1 }}>
             <SearchIcon />
           </IconButton>
