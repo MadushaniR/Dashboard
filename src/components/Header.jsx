@@ -14,7 +14,7 @@ const Header = ({ title, subtitle }) => {
       >
         {title}
       </Typography>
-      <Typography variant="h5" color={colors.greenAccent[400]}>
+      <Typography variant="h5" fontWeight="700" color={colors.primary[1200]}>
         {subtitle}
       </Typography>
     </Box>

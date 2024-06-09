@@ -7,6 +7,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
+import Header from "../../components/Header";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -16,7 +17,7 @@ const Dashboard = () => {
     <Box m="20px" height="calc(100vh - 40px)" overflow="auto" backgroundColor={colors.blueAccent[1000]}>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Typography variant="h4" fontWeight="bold">DASHBOARD</Typography>
+      <Header title="DASHBOARD" subtitle="Welcome to your dashbord" />
         <Button
           sx={{
             backgroundColor: colors.redAccent[500],
