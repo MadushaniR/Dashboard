@@ -1,280 +1,172 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
-import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m="20px">
+    <Box m="20px" height="calc(100vh - 40px)" overflow="auto" backgroundColor={colors.blueAccent[1000]}>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.redAccent[500],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
-          </Button>
-        </Box>
+        <Typography variant="h4" fontWeight="bold">DASHBOARD</Typography>
+        <Button
+          sx={{
+            backgroundColor: colors.redAccent[500],
+            color: colors.grey[100],
+            fontSize: "14px",
+            fontWeight: "bold",
+            padding: "10px 20px",
+          }}
+        >
+          <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+          Download Reports
+        </Button>
       </Box>
 
       {/* GRID & CHARTS */}
       <Box
         display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
+        gridTemplateColumns="repeat(6, 1fr)"
         gridAutoRows="140px"
         gap="20px"
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          gridColumn="span 1"
+          backgroundColor={colors.primary[1400]}
           display="flex"
-          alignItems="center"
+          flexDirection="column"
           justifyContent="center"
+          alignItems="center"
+          p="20px"
+          borderRadius="10px"
         >
-          <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
+          <Box display="flex" alignItems="center" mb="10px">
+            <Typography variant="h5" fontWeight="bold" ml="10px">Total Customers</Typography>
+            <PersonAddIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+          </Box>
+          <Box display="flex" alignItems="center">
+            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+21%</Typography>
+            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+          </Box>
         </Box>
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          gridColumn="span 1"
+          backgroundColor={colors.primary[1400]}
           display="flex"
-          alignItems="center"
+          flexDirection="column"
           justifyContent="center"
+          alignItems="center"
+          p="20px"
+          borderRadius="10px"
         >
-          <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
+          <Box display="flex" alignItems="center" mb="10px">
+            <Typography variant="h5" fontWeight="bold" ml="10px">Sales Today</Typography>
+            <PointOfSaleIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+          </Box>
+          <Box display="flex" alignItems="center">
+            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+21%</Typography>
+            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+          </Box>
         </Box>
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[1400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
+          borderRadius="10px"
         >
-          <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="1,325,134"
-            subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
-            icon={
-              <TrafficIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
+          <Typography variant="h4" fontWeight="bold">Loading Data</Typography>
         </Box>
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          gridColumn="span 1"
+          backgroundColor={colors.primary[1400]}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          p="20px"
+          borderRadius="10px"
         >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $59,342.32
-              </Typography>
-            </Box>
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
+          <Box display="flex" alignItems="center" mb="10px">
+            <Typography variant="h5" fontWeight="bold" ml="10px">Monthly Sales</Typography>
+            <PointOfSaleIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+          <Box display="flex" alignItems="center">
+            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+5%</Typography>
+            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
+          gridColumn="span 1"
+          backgroundColor={colors.primary[1400]}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          p="20px"
+          borderRadius="10px"
         >
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            borderBottom={`4px solid ${colors.primary[500]}`}
-            colors={colors.grey[100]}
-            p="15px"
-          >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
-            </Typography>
+          <Box display="flex" alignItems="center" mb="10px">
+          <Typography variant="h5" fontWeight="bold" ml="10px">Yearly Sales</Typography>
+            <TrafficIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
           </Box>
-          {mockTransactions.map((transaction, i) => (
-            <Box
-              key={`${transaction.txId}-${i}`}
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              borderBottom={`4px solid ${colors.primary[500]}`}
-              p="15px"
-            >
-              <Box>
-                <Typography
-                  color={colors.greenAccent[500]}
-                  variant="h5"
-                  fontWeight="600"
-                >
-                  {transaction.txId}
-                </Typography>
-                <Typography color={colors.grey[100]}>
-                  {transaction.user}
-                </Typography>
-              </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
-                p="5px 10px"
-                borderRadius="4px"
-              >
-                ${transaction.cost}
-              </Box>
-            </Box>
-          ))}
+          <Box display="flex" alignItems="center">
+            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+43%</Typography>
+            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+          </Box>
         </Box>
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
+          gridColumn="span 6"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          p="30px"
+          backgroundColor={colors.primary[1400]}
+          p="20px"
+          overflow="auto"
+          borderRadius="10px"
         >
-          <Typography variant="h5" fontWeight="600">
-            Campaign
-          </Typography>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            mt="25px"
-          >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              $48,352 revenue generated
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
-          </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Sales Quantity
-          </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
-          </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          padding="30px"
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-            Geography Based Traffic
-          </Typography>
-          <Box height="200px">
-            <GeographyChart isDashboard={true} />
-          </Box>
+          {/* <Typography variant="h6" fontWeight="bold" mb="20px">
+            Transactions
+          </Typography> */}
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {mockTransactions.map((transaction, i) => (
+                <tr key={i}>
+                  <td>{transaction.txId}</td>
+                  <td>{transaction.user}</td>
+                  <td>{transaction.email}</td>
+                  <td>{transaction.city}</td>
+                  <td>{transaction.state}</td>
+                  <td>{transaction.country}</td>
+                  <td>{transaction.phone}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Box>
       </Box>
     </Box>

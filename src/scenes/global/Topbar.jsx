@@ -16,7 +16,7 @@ const Topbar = ({ setIsHidden }) => {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
+    <Box display="flex" justifyContent="space-between" p={2} backgroundColor={colors.blueAccent[1000]}>
       <Box display="flex" alignItems="center">
         {/* MENU OUTLINE ICON */}
         <IconButton onClick={() => setIsHidden(hidden => !hidden)}>
