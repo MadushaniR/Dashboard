@@ -30,7 +30,18 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       onClick={() => setSelected(title)}
       icon={icon}
     >
-      <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
+      <Box display="flex" alignItems="center">
+        <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
+        {selected === title && (
+          <Typography
+            fontSize="16px"
+            color="#000000" // Changed to black color
+            ml="10px"
+          >
+            {'>'}
+          </Typography>
+        )}
+      </Box>
       <Link to={to} />
     </MenuItem>
   );
