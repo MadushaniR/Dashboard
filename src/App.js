@@ -5,16 +5,14 @@ import Sidebar from './scenes/view/Sidebar';
 import Dashboard from './scenes/dashboard';
 import Product from './scenes/product';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { ColorModeContext, useMode } from './theme';
+
 
 function App() {
-  const [theme, colorMode] = useMode();
+  
   const [isSidebarHidden, setIsSidebarHidden] = useState(false);
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+   
         <div className="app">
           <Sidebar isHidden={isSidebarHidden} setIsHidden={setIsSidebarHidden} />
           <main className="content">
@@ -25,8 +23,7 @@ function App() {
             </Routes>
           </main>
         </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    
   );
 }
 

@@ -3,7 +3,6 @@ import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Box, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 import 'react-pro-sidebar/dist/css/styles.css';
-import { tokens } from '../../theme';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -18,13 +17,13 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+ 
+
   return (
     <MenuItem
       active={selected === title}
       style={{
-        color: colors.primary[1100],
+        color: '#F2A40',
         fontSize: '18px',  // Increased font size
       }}
       onClick={() => setSelected(title)}
@@ -49,8 +48,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const Sidebar = ({ isHidden, setIsHidden }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState('Dashboard');
 
@@ -60,7 +58,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
         <Box
           sx={{
             '& .pro-sidebar-inner': {
-              background: `${colors.blueAccent[800]} !important`,
+              background: `'#2a2d64 !important`,
               marginLeft: '-15px', // Adjust the margin
               width: '270px', // Increased sidebar width
               overflowY: 'auto', // Added for vertical scrolling
@@ -74,11 +72,11 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
             },
             '& .pro-inner-item:hover': {
               color: '#ffedc2 !important',
-              backgroundColor: `${colors.blueAccent[700]} !important`,
+              backgroundColor: `"#3e4396" !important`,
             },
             '& .pro-menu-item.active': {
               color: '#000000 !important',
-              backgroundColor: `${colors.primary[1300]} !important`,
+              backgroundColor: `"#ffe3a3" !important`,
             },
           }}
         >
@@ -96,7 +94,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
+                  color="#ffedc2"
                   sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Client Facing
@@ -132,7 +130,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
+                  color="#ffedc2"
                   sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Sales
@@ -167,7 +165,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 />
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
+                  color="#ffedc2"
                   sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Management

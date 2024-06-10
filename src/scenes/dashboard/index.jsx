@@ -1,5 +1,4 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -9,8 +8,8 @@ import Header from "../../components/Header";
 import { DataGrid } from "@mui/x-data-grid";
 
 const Dashboard = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+
+
 
   const columns = [
     { field: "txId", headerName: "ID", flex: 1 },
@@ -23,14 +22,14 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m="20px" height="calc(100vh - 40px)" backgroundColor={colors.blueAccent[1000]}>
+    <Box m="20px" height="calc(100vh - 40px)" backgroundColor='#191F45'>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Button
           sx={{
-            backgroundColor: colors.redAccent[500],
-            color: colors.grey[100],
+            backgroundColor: '#2c100f',
+            color: '#141414',
             fontSize: "14px",
             fontWeight: "bold",
             padding: "10px 20px",
@@ -51,7 +50,7 @@ const Dashboard = () => {
         {/* ROW 1 */}
         <Box
           gridColumn="span 1"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -61,16 +60,16 @@ const Dashboard = () => {
         >
           <Box display="flex" alignItems="center" mb="10px">
             <Typography variant="h5" fontWeight="bold" ml="10px">Total Customers</Typography>
-            <PersonAddIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+            <PersonAddIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+21%</Typography>
-            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+            <Typography variant="h5" color="#ffedc2" mr="5px">+21%</Typography>
+            <Typography variant="h5" color='#141414'>Since last month</Typography>
           </Box>
         </Box>
         <Box
           gridColumn="span 1"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -80,17 +79,17 @@ const Dashboard = () => {
         >
           <Box display="flex" alignItems="center" mb="10px">
             <Typography variant="h5" fontWeight="bold" ml="10px">Sales Today</Typography>
-            <PointOfSaleIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+            <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+21%</Typography>
-            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+            <Typography variant="h5" color="#ffedc2" mr="5px">+21%</Typography>
+            <Typography variant="h5" color='#141414'>Since last month</Typography>
           </Box>
         </Box>
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -102,7 +101,7 @@ const Dashboard = () => {
         {/* ROW 2 */}
         <Box
           gridColumn="span 1"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -112,16 +111,16 @@ const Dashboard = () => {
         >
           <Box display="flex" alignItems="center" mb="10px">
             <Typography variant="h5" fontWeight="bold" ml="10px">Monthly Sales</Typography>
-            <PointOfSaleIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+            <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+5%</Typography>
-            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+            <Typography variant="h5" color="#ffedc2" mr="5px">+5%</Typography>
+            <Typography variant="h5" color='#141414'>Since last month</Typography>
           </Box>
         </Box>
         <Box
           gridColumn="span 1"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -131,11 +130,11 @@ const Dashboard = () => {
         >
           <Box display="flex" alignItems="center" mb="10px">
             <Typography variant="h5" fontWeight="bold" ml="10px">Yearly Sales</Typography>
-            <TrafficIcon sx={{ color: colors.primary[1200], fontSize: "26px" }} />
+            <TrafficIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color={colors.primary[1200]} mr="5px">+43%</Typography>
-            <Typography variant="h5" color={colors.grey[100]}>Since last month</Typography>
+            <Typography variant="h5" color="#ffedc2" mr="5px">+43%</Typography>
+            <Typography variant="h5" color='#141414'>Since last month</Typography>
           </Box>
         </Box>
 
@@ -143,7 +142,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 6"
           gridRow="span 2"
-          backgroundColor={colors.primary[1400]}
+          backgroundColor="#21295B"
           p="20px"
           borderRadius="10px"
         >
@@ -163,18 +162,18 @@ const Dashboard = () => {
                   borderBottom: "none",
                 },
                 "& .MuiDataGrid-columnHeaders": {
-                  backgroundColor: colors.blueAccent[700],
+                  backgroundColor: "#3e4396",
                   borderBottom: "none",
                 },
                 "& .MuiDataGrid-virtualScroller": {
-                  backgroundColor: colors.primary[400],
+                  backgroundColor: "#1F2A40",
                 },
                 "& .MuiDataGrid-footerContainer": {
                   borderTop: "none",
-                  backgroundColor: colors.blueAccent[700],
+                  backgroundColor: "#3e4396",
                 },
                 "& .MuiCheckbox-root": {
-                  color: `${colors.greenAccent[200]} !important`,
+                  color: `'1F2A40' !important`,
                 },
               }}
             />
