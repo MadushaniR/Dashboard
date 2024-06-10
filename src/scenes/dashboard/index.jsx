@@ -162,26 +162,26 @@ const Dashboard = () => {
               sx={{
                 "& .MuiDataGrid-root": {
                   border: "none",
-             
+
                 },
                 "& .MuiDataGrid-cell": {
                   borderBottom: "none",
-                  color:"#fff",
+                  color: "#fff",
                   backgroundColor: "#21295c",
                 },
                 "& .MuiDataGrid-columnHeaders": {
                   backgroundColor: "#21295c",
                   borderBottom: "none",
-                  color:"#fff"
+                  color: "#fff"
                 },
                 "& .MuiDataGrid-virtualScroller": {
                   backgroundColor: "#1F2A40",
-                
+
                 },
                 "& .MuiDataGrid-footerContainer": {
                   borderTop: "none",
                   backgroundColor: "#21295c",
-                  color:"#fff"
+                  color: "#fff"
                 },
                 "& .MuiCheckbox-root": {
                   color: `'1F2A40' !important`,

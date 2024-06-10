@@ -14,7 +14,9 @@ import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import EventIcon from '@mui/icons-material/Event';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp'; // Corrected import
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
@@ -104,21 +106,21 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 />
                 <Item
                   title="Customers"
-                  to="/contacts"
+                  to="/Product"
                   icon={<GroupsIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Transactions"
-                  to="/invoices"
+                  to="/Product"
                   icon={<ReceiptLongIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Geography"
-                  to="/invoices"
+                  to="/Product"
                   icon={<PublicIcon />}
                   selected={selected}
                   setSelected={setSelected}
@@ -133,28 +135,28 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 </Typography>
                 <Item
                   title="Overview"
-                  to="/form"
+                  to="/Product"
                   icon={<PointOfSaleIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Daily"
-                  to="/calendar"
+                  to="/Product"
                   icon={<EventIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Monthly"
-                  to="/faq"
+                  to="/Product"
                   icon={<CalendarMonthIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Breakdown"
-                  to="/faq"
+                  to="/Product"
                   icon={<PieChartOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
@@ -168,20 +170,25 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 </Typography>
                 <Item
                   title="Admin"
-                  to="/bar"
+                  to="/Product"
                   icon={<AdminPanelSettingsIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Performance"
-                  to="/pie"
+                  to="/Product"
                   icon={<TrendingUpIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
               </Box>
             </Menu>
+            <hr width="100%"></hr>
+            <Box display="flex" justifyContent="space-between" alignItems="center" padding="20px">
+              <PersonOutlinedIcon sx={{ marginLeft: '50px' }} />
+              <SettingsOutlinedIcon />
+            </Box>
           </ProSidebar>
         </Box>
       )}
