@@ -10,13 +10,13 @@ import { DataGrid } from "@mui/x-data-grid";
 const Dashboard = () => {
 
   const columns = [
-    { field: "txId", headerName: "ID", flex: 1 },
-    { field: "user", headerName: "Name", flex: 1 },
-    { field: "email", headerName: "Email", flex: 1 },
-    { field: "city", headerName: "City", flex: 1 },
-    { field: "state", headerName: "State", flex: 1 },
-    { field: "country", headerName: "Country", flex: 1 },
-    { field: "phone", headerName: "Phone", flex: 1 },
+    { field: "ID", headerName: "ID", flex: 1 },
+    { field: "Name", headerName: "Name", flex: 1 },
+    { field: "Email", headerName: "Email", flex: 1 },
+    { field: "City", headerName: "City", flex: 1 },
+    { field: "State", headerName: "State", flex: 1 },
+    { field: "Country", headerName: "Country", flex: 1 },
+    { field: "Phone", headerName: "Phone", flex: 1 },
   ];
 
   return (
@@ -31,10 +31,10 @@ const Dashboard = () => {
             fontSize: "14px",
             fontWeight: "bold",
             padding: "10px 20px",
-            marginRight:"3%"
+            marginRight: "3%"
           }}
         >
-          <DownloadOutlinedIcon  />
+          <DownloadOutlinedIcon />
           Download Reports
         </Button>
       </Box>
@@ -59,11 +59,11 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Total Customers</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px' marginTop='10px' color='rgb(255, 246, 224)' lineHeight='1.6' >Total Customers</Typography>
             <PersonAddIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" fontStyle= 'italic' mr="5px">+21%</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" fontStyle='italic' mr="5px">+21%</Typography>
             <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
@@ -78,29 +78,29 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Sales Today</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px' marginTop='10px' color='rgb(255, 246, 224)' lineHeight='1.6' >Sales Today</Typography>
             <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+21%</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle='italic'>+21%</Typography>
             <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
-           {/* LOADING DATA BOX */}
-           <Box
-        gridColumn="span 4"
-        gridRow="span 2"
-        backgroundColor="#21295B"
-        display="flex"
-        justifyContent="flex-start"
-        borderRadius="10px"
-        padding="10px"
-        alignItems="start"
-      >
-        <Typography fontSize="16px" fontWeight="400" color="#fff" textAlign="left" >
-          Loading data...
-        </Typography>
-</Box>
+        {/* LOADING DATA BOX */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor="#21295B"
+          display="flex"
+          justifyContent="flex-start"
+          borderRadius="10px"
+          padding="10px"
+          alignItems="start"
+        >
+          <Typography fontSize="16px" fontWeight="400" color="#fff" textAlign="left" >
+            Loading data...
+          </Typography>
+        </Box>
 
 
         {/* ROW 2 */}
@@ -115,11 +115,11 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Monthly Sales</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px' marginTop='10px' color='rgb(255, 246, 224)' lineHeight='1.6' >Monthly Sales</Typography>
             <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+5%</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle='italic'>+5%</Typography>
             <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
@@ -134,11 +134,11 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Yearly Sales</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px' marginTop='10px' color='rgb(255, 246, 224)' lineHeight='1.6' >Yearly Sales</Typography>
             <TrafficIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+43%</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle='italic'>+43%</Typography>
             <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
@@ -158,24 +158,30 @@ const Dashboard = () => {
               columns={columns}
               pageSize={10}
               rowsPerPageOptions={[10]}
-              getRowId={(row) => row.txId}
+              getRowId={(row) => row.ID}
               sx={{
                 "& .MuiDataGrid-root": {
                   border: "none",
+             
                 },
                 "& .MuiDataGrid-cell": {
                   borderBottom: "none",
+                  color:"#fff",
+                  backgroundColor: "#21295c",
                 },
                 "& .MuiDataGrid-columnHeaders": {
-                  backgroundColor: "#3e4396",
+                  backgroundColor: "#21295c",
                   borderBottom: "none",
+                  color:"#fff"
                 },
                 "& .MuiDataGrid-virtualScroller": {
                   backgroundColor: "#1F2A40",
+                
                 },
                 "& .MuiDataGrid-footerContainer": {
                   borderTop: "none",
-                  backgroundColor: "#3e4396",
+                  backgroundColor: "#21295c",
+                  color:"#fff"
                 },
                 "& .MuiCheckbox-root": {
                   color: `'1F2A40' !important`,
