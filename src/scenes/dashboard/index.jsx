@@ -20,7 +20,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m="20px" height="calc(100vh - 40px)" backgroundColor='#191F45' padding="10px" marginTop="-5px" marginLeft="-15px" width="100%">
+    <Box m="20px" backgroundColor='#191F45' padding="10px" marginTop="-5px" marginLeft="-15px" width="100%">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
@@ -56,16 +56,15 @@ const Dashboard = () => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          p="20px"
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography variant="h5" fontWeight="bold" ml="10px">Total Customers</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Total Customers</Typography>
             <PersonAddIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color="#ffedc2" mr="5px">+21%</Typography>
-            <Typography variant="h5" color='#141414'>Since last month</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" fontStyle= 'italic' mr="5px">+21%</Typography>
+            <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
         <Box
@@ -79,25 +78,30 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography variant="h5" fontWeight="bold" ml="10px">Sales Today</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Sales Today</Typography>
             <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color="#ffedc2" mr="5px">+21%</Typography>
-            <Typography variant="h5" color='#141414'>Since last month</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+21%</Typography>
+            <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor="#21295B"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="10px"
-        >
-          <Typography variant="h4" fontWeight="bold">Loading Data</Typography>
-        </Box>
+           {/* LOADING DATA BOX */}
+           <Box
+        gridColumn="span 4"
+        gridRow="span 2"
+        backgroundColor="#21295B"
+        display="flex"
+        justifyContent="flex-start"
+        borderRadius="10px"
+        padding="10px"
+        alignItems="start"
+      >
+        <Typography fontSize="16px" fontWeight="400" color="#fff" textAlign="left" >
+          Loading data...
+        </Typography>
+</Box>
+
 
         {/* ROW 2 */}
         <Box
@@ -111,12 +115,12 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography variant="h5" fontWeight="bold" ml="10px">Monthly Sales</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Monthly Sales</Typography>
             <PointOfSaleIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color="#ffedc2" mr="5px">+5%</Typography>
-            <Typography variant="h5" color='#141414'>Since last month</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+5%</Typography>
+            <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
         <Box
@@ -130,12 +134,12 @@ const Dashboard = () => {
           borderRadius="10px"
         >
           <Box display="flex" alignItems="center" mb="10px">
-            <Typography variant="h5" fontWeight="bold" ml="10px">Yearly Sales</Typography>
+            <Typography fontSize='15px' fontWeight="500" marginRight='10px'marginTop='10px' color='rgb(255, 246, 224)' lineHeight= '1.6' >Yearly Sales</Typography>
             <TrafficIcon sx={{ color: "#ffedc2", fontSize: "26px" }} />
           </Box>
           <Box display="flex" alignItems="center">
-            <Typography variant="h5" color="#ffedc2" mr="5px">+43%</Typography>
-            <Typography variant="h5" color='#141414'>Since last month</Typography>
+            <Typography fontSize='16px' fontWeight="400" color="#ffedc2" mr="5px" fontStyle= 'italic'>+43%</Typography>
+            <Typography fontSize='14px' fontWeight="400" color='#fff' marginLeft='20%'>Since last month</Typography>
           </Box>
         </Box>
 

@@ -50,7 +50,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
   const [selected, setSelected] = useState('Dashboard');
 
   return (
-    <Box background='#2a2d64' marginTop="-10px" marginLeft="-15px">
+    <Box background='#2a2d64' marginTop="-10px" marginLeft="-15px" >
       {!isHidden && (
         <Box
           sx={{
@@ -59,7 +59,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
               marginLeft: '-15px',
               width: '270px',
               overflowY: 'auto',
-              height: '100vh',
+              height: '113vh',
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
