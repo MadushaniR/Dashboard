@@ -4,8 +4,6 @@ import Topbar from './scenes/view/Topbar';
 import Sidebar from './scenes/view/Sidebar';
 import Dashboard from './scenes/dashboard';
 import Product from './scenes/product';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-
 
 function App() {
   
@@ -13,7 +11,7 @@ function App() {
 
   return (
    
-        <div className="app">
+        <div className="app" >
           <Sidebar isHidden={isSidebarHidden} setIsHidden={setIsSidebarHidden} />
           <main className="content">
             <Topbar setIsHidden={setIsSidebarHidden} />

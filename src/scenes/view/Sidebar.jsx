@@ -14,27 +14,25 @@ import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import EventIcon from '@mui/icons-material/Event';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'; // Corrected import
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
- 
-
   return (
     <MenuItem
       active={selected === title}
       style={{
-        color: '#F2A40',
-        fontSize: '18px',  // Increased font size
+        color: selected === title ? '#000000' : '#FFEDC2', // Black for selected, Cream for unselected
+        fontSize: '18px',
       }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
       <Box display="flex" alignItems="center">
-        <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
+        <Typography fontSize="16px">{title}</Typography>
         {selected === title && (
           <Typography
             fontSize="20px"
-            color="#000000" // Changed to black color
+            color="#000000"
             ml="10px"
             fontWeight="bold"
           >
@@ -48,41 +46,39 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const Sidebar = ({ isHidden, setIsHidden }) => {
-
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState('Dashboard');
 
   return (
-    <Box>
+    <Box background= '#2a2d64' marginTop="-10px" marginLeft="-15px">
       {!isHidden && (
         <Box
           sx={{
             '& .pro-sidebar-inner': {
-              background: `'#2a2d64 !important`,
-              marginLeft: '-15px', // Adjust the margin
-              width: '270px', // Increased sidebar width
-              overflowY: 'auto', // Added for vertical scrolling
-              height: '100vh', // Ensures the sidebar takes full height of the viewport
+              background: '#2a2d64',
+              marginLeft: '-15px',
+              width: '270px',
+              overflowY: 'auto',
+              height: '100vh',
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
             },
             '& .pro-inner-item': {
-              padding: '10px 35px 10px 20px !important', // Increased padding for larger font
+              padding: '10px 35px 10px 20px !important',
             },
             '& .pro-inner-item:hover': {
-              color: '#ffedc2 !important',
-              backgroundColor: `"#3e4396" !important`,
+              backgroundColor: '#3c4090 !important',
             },
             '& .pro-menu-item.active': {
               color: '#000000 !important',
-              backgroundColor: `"#ffe3a3" !important`,
+              backgroundColor: '#FFE3A3 !important',
             },
           }}
         >
           <ProSidebar collapsed={isCollapsed}>
             <Menu iconShape="square">
-              <div style={{fontSize:"24px",fontWeight:"700",textAlign:"center",color:"rgb(255, 227, 163)",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
+              <div style={{fontSize:"24px",fontWeight:"700",textAlign:"center",color:"#FFEDC2",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
               <Box paddingLeft={isCollapsed ? undefined : '10%'}>
                 <Item
                   title="Dashboard"
@@ -94,8 +90,8 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color="#ffedc2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Client Facing
                 </Typography>
@@ -130,8 +126,8 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color="#ffedc2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Sales
                 </Typography>
@@ -165,8 +161,8 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 />
                 <Typography
                   variant="h6"
-                  color="#ffedc2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Management
                 </Typography>

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Box, IconButton } from '@mui/material';
 
 import InputBase from '@mui/material/InputBase';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
@@ -12,9 +11,8 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 const Topbar = ({ setIsHidden }) => {
 
-
   return (
-    <Box display="flex" justifyContent="space-between" p={2} backgroundColor="#191F45">
+    <Box display="flex" justifyContent="space-between" backgroundColor="#191F45" marginTop="-8px" padding='10px'> {/* Adjusted margin */}
       <Box display="flex" alignItems="center">
         {/* MENU OUTLINE ICON */}
         <IconButton onClick={() => setIsHidden(hidden => !hidden)}>
