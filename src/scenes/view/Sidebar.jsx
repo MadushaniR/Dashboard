@@ -103,7 +103,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 </Typography>
                 <Item
                   title="Products"
-                  to="/team"
+                  to="/Product"
                   icon={<ProductionQuantityLimitsIcon />}
                   selected={selected}
                   setSelected={setSelected}
