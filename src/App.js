@@ -15,7 +15,7 @@ function App() {
           <Sidebar isHidden={isSidebarHidden} setIsHidden={setIsSidebarHidden} />
           <main className="content">
             <Topbar setIsHidden={setIsSidebarHidden} />
-            <Routes>
+            <Routes >
               <Route path="/" element={<Dashboard />} />
               <Route path="/product" element={<Product />} />
             </Routes>
