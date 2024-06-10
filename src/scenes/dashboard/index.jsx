@@ -9,8 +9,6 @@ import { DataGrid } from "@mui/x-data-grid";
 
 const Dashboard = () => {
 
-
-
   const columns = [
     { field: "txId", headerName: "ID", flex: 1 },
     { field: "user", headerName: "Name", flex: 1 },
@@ -28,14 +26,15 @@ const Dashboard = () => {
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Button
           sx={{
-            backgroundColor: '#2c100f',
-            color: '#141414',
+            backgroundColor: '#f44336',
+            color: '#fff',
             fontSize: "14px",
             fontWeight: "bold",
             padding: "10px 20px",
+            marginRight:"3%"
           }}
         >
-          <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+          <DownloadOutlinedIcon  />
           Download Reports
         </Button>
       </Box>
@@ -46,6 +45,8 @@ const Dashboard = () => {
         gridTemplateColumns="repeat(6, 1fr)"
         gridAutoRows="140px"
         gap="20px"
+        marginTop='40px'
+        marginLeft='40px'
       >
         {/* ROW 1 */}
         <Box

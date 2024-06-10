@@ -16,7 +16,7 @@ const Topbar = ({ setIsHidden }) => {
       <Box display="flex" alignItems="center">
         {/* MENU OUTLINE ICON */}
         <IconButton onClick={() => setIsHidden(hidden => !hidden)}>
-          <MenuOutlinedIcon style={{ color: 'white' }} />
+          <MenuOutlinedIcon style={{ color: 'white', marginLeft:"30px"}} />
         </IconButton>
 
         {/* SEARCH BAR */}
@@ -29,7 +29,7 @@ const Topbar = ({ setIsHidden }) => {
       </Box>
 
       {/* ICONS */}
-      <Box display="flex">
+      <Box display="flex"  marginRight="2%">
         <IconButton style={{ color: 'white' }}>
           <DarkModeOutlinedIcon />
         </IconButton>
