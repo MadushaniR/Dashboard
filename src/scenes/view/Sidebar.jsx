@@ -34,9 +34,10 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
         {selected === title && (
           <Typography
-            fontSize="16px"
+            fontSize="20px"
             color="#000000" // Changed to black color
             ml="10px"
+            fontWeight="bold"
           >
             {'>'}
           </Typography>
@@ -61,7 +62,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
             '& .pro-sidebar-inner': {
               background: `${colors.blueAccent[800]} !important`,
               marginLeft: '-15px', // Adjust the margin
-              width: '220px', // Increased sidebar width
+              width: '270px', // Increased sidebar width
               overflowY: 'auto', // Added for vertical scrolling
               height: '100vh', // Ensures the sidebar takes full height of the viewport
             },
@@ -102,7 +103,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 </Typography>
                 <Item
                   title="Products"
-                  to="/team"
+                  to="/Product"
                   icon={<ProductionQuantityLimitsIcon />}
                   selected={selected}
                   setSelected={setSelected}

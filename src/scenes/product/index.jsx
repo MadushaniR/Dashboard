@@ -1,7 +1,7 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "../../components/Header";
 
-const Team = () => {
+const Product = () => {
 
   return (
     <Box m="20px">
@@ -10,4 +10,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Product;
