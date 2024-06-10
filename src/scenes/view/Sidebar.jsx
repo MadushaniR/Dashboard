@@ -3,7 +3,6 @@ import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Box, Typography, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 import 'react-pro-sidebar/dist/css/styles.css';
-import { tokens } from '../../theme';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
@@ -16,26 +15,26 @@ import EventIcon from '@mui/icons-material/Event';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   return (
     <MenuItem
       active={selected === title}
       style={{
-        color: colors.primary[1100],
-        fontSize: '18px',  // Increased font size
+        color: selected === title ? '#000000' : '#FFEDC2', // Black for selected, Cream for unselected
+        fontSize: '18px',
       }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
       <Box display="flex" alignItems="center">
-        <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
+        <Typography fontSize="16px">{title}</Typography>
         {selected === title && (
           <Typography
             fontSize="20px"
-            color="#000000" // Changed to black color
+            color="#000000"
             ml="10px"
             fontWeight="bold"
           >
@@ -49,42 +48,39 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const Sidebar = ({ isHidden, setIsHidden }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState('Dashboard');
 
   return (
-    <Box>
+    <Box background='#2a2d64' marginTop="-10px" marginLeft="-15px" >
       {!isHidden && (
         <Box
           sx={{
             '& .pro-sidebar-inner': {
-              background: `${colors.blueAccent[800]} !important`,
-              marginLeft: '-15px', // Adjust the margin
-              width: '270px', // Increased sidebar width
-              overflowY: 'auto', // Added for vertical scrolling
-              height: '100vh', // Ensures the sidebar takes full height of the viewport
+              background: '#2a2d64',
+              marginLeft: '-15px',
+              width: '270px',
+              overflowY: 'auto',
+              height: '113vh',
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
             },
             '& .pro-inner-item': {
-              padding: '10px 35px 10px 20px !important', // Increased padding for larger font
+              padding: '10px 35px 10px 20px !important',
             },
             '& .pro-inner-item:hover': {
-              color: '#ffedc2 !important',
-              backgroundColor: `${colors.blueAccent[700]} !important`,
+              backgroundColor: '#3c4090 !important',
             },
             '& .pro-menu-item.active': {
               color: '#000000 !important',
-              backgroundColor: `${colors.primary[1300]} !important`,
+              backgroundColor: '#FFE3A3 !important',
             },
           }}
         >
           <ProSidebar collapsed={isCollapsed}>
             <Menu iconShape="square">
-              <div style={{fontSize:"24px",fontWeight:"700",textAlign:"center",color:"rgb(255, 227, 163)",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
+              <div style={{ fontSize: "24px", fontWeight: "700", textAlign: "center", color: "#FFEDC2", marginBottom: "25px", marginTop: "10px" }}>LAVONTECH</div>
               <Box paddingLeft={isCollapsed ? undefined : '10%'}>
                 <Item
                   title="Dashboard"
@@ -96,8 +92,8 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Client Facing
                 </Typography>
@@ -110,21 +106,21 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 />
                 <Item
                   title="Customers"
-                  to="/contacts"
+                  to="/Product"
                   icon={<GroupsIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Transactions"
-                  to="/invoices"
+                  to="/Product"
                   icon={<ReceiptLongIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Geography"
-                  to="/invoices"
+                  to="/Product"
                   icon={<PublicIcon />}
                   selected={selected}
                   setSelected={setSelected}
@@ -132,62 +128,67 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
 
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Sales
                 </Typography>
                 <Item
                   title="Overview"
-                  to="/form"
+                  to="/Product"
                   icon={<PointOfSaleIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Daily"
-                  to="/calendar"
+                  to="/Product"
                   icon={<EventIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Monthly"
-                  to="/faq"
+                  to="/Product"
                   icon={<CalendarMonthIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Breakdown"
-                  to="/faq"
+                  to="/Product"
                   icon={<PieChartOutlineOutlinedIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Typography
                   variant="h6"
-                  color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
+                  color="#FFEDC2"
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
                 >
                   Management
                 </Typography>
                 <Item
                   title="Admin"
-                  to="/bar"
+                  to="/Product"
                   icon={<AdminPanelSettingsIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
                 <Item
                   title="Performance"
-                  to="/pie"
+                  to="/Product"
                   icon={<TrendingUpIcon />}
                   selected={selected}
                   setSelected={setSelected}
                 />
               </Box>
             </Menu>
+            <hr width="100%"></hr>
+            <Box display="flex" justifyContent="space-between" alignItems="center" padding="20px">
+              <PersonOutlinedIcon sx={{ marginLeft: '50px' }} />
+              <SettingsOutlinedIcon />
+            </Box>
           </ProSidebar>
         </Box>
       )}
