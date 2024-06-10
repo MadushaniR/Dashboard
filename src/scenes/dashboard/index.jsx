@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -8,6 +8,8 @@ import Header from "../../components/Header";
 import { DataGrid } from "@mui/x-data-grid";
 
 const Dashboard = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const columns = [
     { field: "ID", headerName: "ID", flex: 1 },
@@ -28,10 +30,13 @@ const Dashboard = () => {
           sx={{
             backgroundColor: '#f44336',
             color: '#fff',
-            fontSize: "14px",
+            fontSize: isSmallScreen ? "10px" : "14px", // Adjust font size based on screen size
             fontWeight: "bold",
             padding: "10px 20px",
-            marginRight: "3%"
+            marginRight: "3%",
+            "&:hover": {
+              backgroundColor: '#f44336' // Ensure hover color is the same
+            }
           }}
         >
           <DownloadOutlinedIcon />
@@ -42,7 +47,12 @@ const Dashboard = () => {
       {/* GRID & CHARTS */}
       <Box
         display="grid"
-        gridTemplateColumns="repeat(6, 1fr)"
+        gridTemplateColumns={{
+          xs: "repeat(1, 1fr)", // 1 column for extra-small screens
+          sm: "repeat(1, 1fr)", // 1 column for small screens
+          md: "repeat(3, 1fr)", // 3 columns for medium screens
+          lg: "repeat(6, 1fr)"  // 6 columns for large screens
+        }}
         gridAutoRows="140px"
         gap="20px"
         marginTop='40px'
@@ -50,7 +60,7 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 1"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 1" }}
           backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
@@ -68,7 +78,7 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 1"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 1" }}
           backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
@@ -88,7 +98,7 @@ const Dashboard = () => {
         </Box>
         {/* LOADING DATA BOX */}
         <Box
-          gridColumn="span 4"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 4" }}
           gridRow="span 2"
           backgroundColor="#21295B"
           display="flex"
@@ -102,10 +112,9 @@ const Dashboard = () => {
           </Typography>
         </Box>
 
-
         {/* ROW 2 */}
         <Box
-          gridColumn="span 1"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 1" }}
           backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
@@ -124,7 +133,7 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 1"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 1" }}
           backgroundColor="#21295B"
           display="flex"
           flexDirection="column"
@@ -145,13 +154,12 @@ const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 6"
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 6" }}
           gridRow="span 2"
           backgroundColor="#21295B"
           p="20px"
           borderRadius="10px"
         >
-
           <Box height="100%">
             <DataGrid
               rows={mockTransactions}
@@ -162,7 +170,6 @@ const Dashboard = () => {
               sx={{
                 "& .MuiDataGrid-root": {
                   border: "none",
-
                 },
                 "& .MuiDataGrid-cell": {
                   borderBottom: "none",
@@ -176,7 +183,6 @@ const Dashboard = () => {
                 },
                 "& .MuiDataGrid-virtualScroller": {
                   backgroundColor: "#1F2A40",
-
                 },
                 "& .MuiDataGrid-footerContainer": {
                   borderTop: "none",
@@ -184,7 +190,7 @@ const Dashboard = () => {
                   color: "#fff"
                 },
                 "& .MuiCheckbox-root": {
-                  color: `'1F2A40' !important`,
+                  color: `'#1F2A40' !important`,
                 },
               }}
             />
