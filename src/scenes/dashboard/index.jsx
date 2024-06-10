@@ -6,16 +6,27 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
+import { DataGrid } from "@mui/x-data-grid";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const columns = [
+    { field: "txId", headerName: "ID", flex: 1 },
+    { field: "user", headerName: "Name", flex: 1 },
+    { field: "email", headerName: "Email", flex: 1 },
+    { field: "city", headerName: "City", flex: 1 },
+    { field: "state", headerName: "State", flex: 1 },
+    { field: "country", headerName: "Country", flex: 1 },
+    { field: "phone", headerName: "Phone", flex: 1 },
+  ];
+
   return (
     <Box m="20px" height="calc(100vh - 40px)" backgroundColor={colors.blueAccent[1000]}>
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashbord" />
+        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
         <Button
           sx={{
             backgroundColor: colors.redAccent[500],
@@ -136,35 +147,38 @@ const Dashboard = () => {
           p="20px"
           borderRadius="10px"
         >
-          {/* <Typography variant="h6" fontWeight="bold" mb="20px">
-            Transactions
-          </Typography> */}
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Country</th>
-                <th>Phone</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockTransactions.map((transaction, i) => (
-                <tr key={i}>
-                  <td>{transaction.txId}</td>
-                  <td>{transaction.user}</td>
-                  <td>{transaction.email}</td>
-                  <td>{transaction.city}</td>
-                  <td>{transaction.state}</td>
-                  <td>{transaction.country}</td>
-                  <td>{transaction.phone}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+
+          <Box height="100%">
+            <DataGrid
+              rows={mockTransactions}
+              columns={columns}
+              pageSize={10}
+              rowsPerPageOptions={[10]}
+              getRowId={(row) => row.txId}
+              sx={{
+                "& .MuiDataGrid-root": {
+                  border: "none",
+                },
+                "& .MuiDataGrid-cell": {
+                  borderBottom: "none",
+                },
+                "& .MuiDataGrid-columnHeaders": {
+                  backgroundColor: colors.blueAccent[700],
+                  borderBottom: "none",
+                },
+                "& .MuiDataGrid-virtualScroller": {
+                  backgroundColor: colors.primary[400],
+                },
+                "& .MuiDataGrid-footerContainer": {
+                  borderTop: "none",
+                  backgroundColor: colors.blueAccent[700],
+                },
+                "& .MuiCheckbox-root": {
+                  color: `${colors.greenAccent[200]} !important`,
+                },
+              }}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
