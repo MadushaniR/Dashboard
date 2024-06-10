@@ -25,11 +25,12 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       active={selected === title}
       style={{
         color: colors.primary[1100],
+        fontSize: '18px',  // Increased font size
       }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
-      <Typography>{title}</Typography>
+      <Typography fontSize="16px">{title}</Typography> {/* Increased font size */}
       <Link to={to} />
     </MenuItem>
   );
@@ -48,13 +49,16 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
           sx={{
             '& .pro-sidebar-inner': {
               background: `${colors.blueAccent[800]} !important`,
-              marginLeft: '-27px',
+              marginLeft: '-15px', // Adjust the margin
+              width: '220px', // Increased sidebar width
+              overflowY: 'auto', // Added for vertical scrolling
+              height: '100vh', // Ensures the sidebar takes full height of the viewport
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
             },
             '& .pro-inner-item': {
-              padding: '5px 35px 5px 20px !important',
+              padding: '10px 35px 10px 20px !important', // Increased padding for larger font
             },
             '& .pro-inner-item:hover': {
               color: '#ffedc2 !important',
@@ -68,7 +72,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
         >
           <ProSidebar collapsed={isCollapsed}>
             <Menu iconShape="square">
-              <div style={{fontSize:"22px",fontWeight:"700",textAlign:"center",color:"rgb(255, 227, 163)",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
+              <div style={{fontSize:"24px",fontWeight:"700",textAlign:"center",color:"rgb(255, 227, 163)",marginBottom:"25px",marginTop:"10px"}}>LAVONTECH</div>
               <Box paddingLeft={isCollapsed ? undefined : '10%'}>
                 <Item
                   title="Dashboard"
@@ -81,7 +85,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px' }}
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Client Facing
                 </Typography>
@@ -117,7 +121,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px' }}
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Sales
                 </Typography>
@@ -152,7 +156,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color={colors.primary[1200]}
-                  sx={{ m: '15px 0 5px 20px' }}
+                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }} // Increased font size
                 >
                   Management
                 </Typography>
