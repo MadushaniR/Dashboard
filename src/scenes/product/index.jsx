@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Product = () => {
 
   return (
-    <Box m="20px">
+    <Box  backgroundColor='#191F45'>
       <Header title="PRODUCTS" subtitle="Here your listings products" />
     </Box>
   );

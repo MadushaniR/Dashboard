@@ -22,7 +22,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box m="20px" height="calc(100vh - 40px)" backgroundColor='#191F45'>
+    <Box m="20px" height="calc(100vh - 40px)" backgroundColor='#191F45' padding="10px" marginTop="-5px" marginLeft="-15px" width="100%">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
