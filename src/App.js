@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', display: 'flex' }}>
       <Sidebar isHidden={isSidebarHidden} setIsHidden={setIsSidebarHidden} style={{ height: sidebarHeight }} />
-      <main className="content" style={{ flexGrow: 1, minHeight: mainHeight, overflowY: mainOverflowY, overflowX: 'hidden', paddingBottom: '20px' }}> {/* Updated minHeight and added paddingBottom */}
+      <main className="content" style={{ flexGrow: 1, minHeight: mainHeight, overflowY: mainOverflowY, overflowX: 'hidden', paddingBottom: '20px' }}> 
         <Topbar setIsHidden={setIsSidebarHidden} />
         <Routes>
           <Route path="/" element={<Dashboard />} />
