@@ -165,13 +165,14 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        {/* ROW 3 */}
-        <Box
+              {/* ROW 3 */}
+              <Box
           gridColumn={{ xs: "span 1", sm: "span 1", md: "span 6" }}
-          gridRow="span 2"
-          backgroundColor="#21295B"
+          gridRow={{ xs: "span 2", sm: "span 2", md: "span 4", lg: "span 4" }} // Adjust grid row span for large screens
+          backgroundColor="21295B"
           p="20px"
           borderRadius="10px"
+          height="70%"
         >
           <Box height="100%">
             <DataGrid
@@ -204,11 +205,13 @@ const Dashboard = () => {
                 },
                 "& .MuiCheckbox-root": {
                   color: `'#1F2A40' !important`,
+                  
                 },
               }}
             />
           </Box>
         </Box>
+
       </Box>
     </Box>
   );
