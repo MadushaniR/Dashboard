@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import 'react-pro-sidebar/dist/css/styles.css';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import GroupsIcon from '@mui/icons-material/Groups';
 import PublicIcon from '@mui/icons-material/Public';
@@ -21,23 +20,18 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
-      active={selected === title}
-      style={{
-        color: selected === title ? '#000000' : '#FFEDC2', // Black for selected, Cream for unselected
-        fontSize: '18px',
-      }}
+      className={selected === title ? 'active-item' : ''}
       onClick={() => setSelected(title)}
-      icon={icon}
     >
-      <Box display="flex" alignItems="center">
-        <Typography fontSize="16px">{title}</Typography>
+      <Box display="flex" alignItems="center" marginLeft="10px">
+        {React.cloneElement(icon, {
+          style: { color: selected === title ? '#000000' : '#FFEDC2' } // Set color based on selection
+        })}
+        <Typography fontSize="14px" fontWeight="400" style={{ color: selected === title ? '#000000' : '#FFF6E0', marginLeft: '20px' }}>
+          {title}
+        </Typography>
         {selected === title && (
-          <Typography
-            fontSize="20px"
-            color="#000000"
-            ml="10px"
-            fontWeight="bold"
-          >
+          <Typography fontSize="20px" ml="10px" fontWeight="bold" style={{ color: '#000000' }}>
             {'>'}
           </Typography>
         )}
@@ -48,11 +42,46 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 };
 
 const Sidebar = ({ isHidden, setIsHidden }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState('Dashboard');
 
   return (
-    <Box background='#2a2d64' marginTop="-10px" marginLeft="-15px" >
+    <Box
+      sx={{
+        background: '#2a2d64',
+        marginTop: "-10px",
+        marginLeft: "-15px",
+        '@media (max-height: 800px)': {
+          '& .pro-sidebar-inner': {
+            height: 'calc(100vh - 56px)',
+          },
+        },
+        '@media (max-height: 600px)': {
+          '& .pro-sidebar-inner': {
+            height: 'calc(100vh - 56px)',
+            fontSize: '14px',
+          },
+          '& .pro-inner-item': {
+            padding: '10px 20px !important',
+          },
+        },
+        '@media (max-height: 400px)': {
+          '& .pro-sidebar-inner': {
+            height: 'calc(100vh - 56px)',
+            fontSize: '12px',
+          },
+          '& .pro-inner-item': {
+            padding: '5px 15px !important',
+          },
+        },
+        '& .active-item': {
+          color: '#000000 !important',
+          backgroundColor: '#FFE3A3 !important',
+        },
+        '& .active-item svg': {
+          fill: '#000000 !important',
+        },
+      }}
+    >
       {!isHidden && (
         <Box
           sx={{
@@ -61,7 +90,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
               marginLeft: '-15px',
               width: '270px',
               overflowY: 'auto',
-              height: '113vh',
+              height: 'calc(100vh - 56px)',
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
@@ -72,16 +101,12 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
             '& .pro-inner-item:hover': {
               backgroundColor: '#3c4090 !important',
             },
-            '& .pro-menu-item.active': {
-              color: '#000000 !important',
-              backgroundColor: '#FFE3A3 !important',
-            },
           }}
         >
-          <ProSidebar collapsed={isCollapsed}>
+          <ProSidebar>
             <Menu iconShape="square">
-              <div style={{ fontSize: "24px", fontWeight: "700", textAlign: "center", color: "#FFEDC2", marginBottom: "25px", marginTop: "10px" }}>LAVONTECH</div>
-              <Box paddingLeft={isCollapsed ? undefined : '10%'}>
+              <div style={{ fontSize: "22px", marginTop: "10px", fontWeight: "700", textAlign: "center", color: '#ffe3a3', marginBottom: "25px", marginTop: "20px" }}>LAVONTECH</div>
+              <Box paddingLeft="10%">
                 <Item
                   title="Dashboard"
                   to="/"
@@ -93,7 +118,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color="#FFEDC2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
+                  sx={{ m: '30px 0 5px 30px', fontSize: '14px' }} // Increased font size
                 >
                   Client Facing
                 </Typography>
@@ -129,7 +154,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color="#FFEDC2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
+                  sx={{ m: '30px 0 5px 30px', fontSize: '14px' }}
                 >
                   Sales
                 </Typography>
@@ -164,7 +189,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
                 <Typography
                   variant="h6"
                   color="#FFEDC2"
-                  sx={{ m: '15px 0 5px 20px', fontSize: '16px' }}
+                  sx={{ m: '30px 0 5px 30px', fontSize: '14px' }}
                 >
                   Management
                 </Typography>

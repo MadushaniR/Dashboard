@@ -1,46 +1,48 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Box, IconButton } from '@mui/material';
-
 import InputBase from '@mui/material/InputBase';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const Topbar = ({ setIsHidden }) => {
+  const iconButtonStyle = {
+    color: 'white',
+    fontSize: '24px',
+    marginRight: '30px',
+  };
 
   return (
-    <Box display="flex" justifyContent="space-between" backgroundColor="#191F45" marginTop="-8px" marginLeft="-15px" padding='10px'> {/* Adjusted margin */}
+    <Box display="flex" justifyContent="space-between" alignItems="center" backgroundColor="#191F45" padding="10px">
       <Box display="flex" alignItems="center">
-        {/* MENU OUTLINE ICON */}
+        {/* toggle */}
         <IconButton onClick={() => setIsHidden(hidden => !hidden)}>
-          <MenuOutlinedIcon style={{ color: 'white', marginLeft:"30px"}} />
+          <MenuOutlinedIcon sx={{ color: 'white', marginLeft: "15px" }} />
         </IconButton>
-
-        {/* SEARCH BAR */}
-        <Box display="flex" backgroundColor="#21295B" borderRadius="3px" >
+        {/* search box */}
+        <Box display="flex" backgroundColor="#21295B" borderRadius="3px" width="250px">
           <InputBase sx={{ ml: 2 }} placeholder="Search..." style={{ color: 'white' }} />
           <IconButton type="button" sx={{ p: 1 }}>
             <SearchIcon style={{ color: 'white' }} />
           </IconButton>
         </Box>
       </Box>
-
-      {/* ICONS */}
-      <Box display="flex"  marginRight="2%">
-        <IconButton style={{ color: 'white' }}>
+      {/* left icons */}
+      <Box display="flex" alignItems="center">
+        <IconButton sx={iconButtonStyle}>
           <DarkModeOutlinedIcon />
         </IconButton>
-        <IconButton style={{ color: 'white' }}>
-          <NotificationsOutlinedIcon />
-        </IconButton>
-        <IconButton style={{ color: 'white' }}>
+        <IconButton sx={iconButtonStyle}>
           <SettingsOutlinedIcon />
         </IconButton>
-        <IconButton style={{ color: 'white' }}>
+        <IconButton sx={iconButtonStyle}>
           <PersonOutlinedIcon />
+        </IconButton>
+        <IconButton sx={{ ...iconButtonStyle, marginRight: '50px', color: '#ffedc2' }}>
+          <ArrowDropDownIcon />
         </IconButton>
       </Box>
     </Box>
