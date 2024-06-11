@@ -1,4 +1,4 @@
-export const mockTransactions = [
+export const dashboardData = [
   {
     ID: "1",
     Name: "John Doe",

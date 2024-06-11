@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, Typography, useTheme, useMediaQuery } from "@mui/material";
-import { mockTransactions } from "../../data/mockData";
+import { dashboardData } from "../../data/tableData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -177,7 +177,7 @@ const Dashboard = () => {
           <Box height="100%" border="none">
             <DataGrid
               border="none"
-              rows={mockTransactions}
+              rows={dashboardData}
               columns={columns}
               pageSize={10}
               rowsPerPageOptions={[10]}
