@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, Button, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -21,8 +22,20 @@ const Dashboard = () => {
     { field: "Phone", headerName: "Phone", flex: 1 },
   ];
 
+  // Define the height based on the screen size
+  const dashboardHeight = isSmallScreen ? "calc(100vh - 56px)" : "100%";
+
   return (
-    <Box m="20px" backgroundColor='#191F45' padding="10px" marginTop="-5px" marginLeft="-15px" width="100%">
+    <Box
+      m="20px"
+      backgroundColor='#191F45'
+      padding="10px"
+      marginTop="-5px"
+      marginLeft="-15px"
+      width="100%"
+      height={dashboardHeight} // Set height based on screen size
+      overflow="auto" // Enable scrolling if content exceeds the height
+    >
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
