@@ -107,7 +107,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
         >
           <ProSidebar collapsed={isCollapsed}>
             <Menu iconShape="square">
-              <div style={{ fontSize: "24px", fontWeight: "700", textAlign: "center", color: "#FFEDC2", marginBottom: "25px", marginTop: "10px" }}>LAVONTECH</div>
+              <div style={{ fontSize: "24px", fontWeight: "700", textAlign: "center", color:'#ffedc2', marginBottom: "25px", marginTop: "10px" }}>LAVONTECH</div>
               <Box paddingLeft={isCollapsed ? undefined : '10%'}>
                 <Item
                   title="Dashboard"

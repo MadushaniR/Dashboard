@@ -172,10 +172,11 @@ const Dashboard = () => {
   p="20px"
   borderRadius="10px"
   height="70%"
-  color="#fff" // Set text color to white
+  border="none"
 >
-  <Box height="100%">
+  <Box height="100%"  border="none">
     <DataGrid
+     border="none"
       rows={mockTransactions}
       columns={columns}
       pageSize={10}
@@ -188,13 +189,13 @@ const Dashboard = () => {
         },
         "& .MuiDataGrid-cell": {
           borderBottom: "none",
-          color: "#fff", // Set text color to white
+          color: "#fff !important", // Set text color to white
           backgroundColor: "#21295c",
         },
         "& .MuiDataGrid-columnHeaders": {
           backgroundColor: "#21295c",
           borderBottom: "none",
-          color: "#fff", // Set text color to white
+          color: "#fff !important", // Set text color to white
         },
         "& .MuiDataGrid-virtualScroller": {
           backgroundColor: "#1F2A40",
@@ -202,16 +203,14 @@ const Dashboard = () => {
         "& .MuiDataGrid-footerContainer": {
           borderTop: "none",
           backgroundColor: "#21295c",
-          color: "#fff", // Set text color to white
+          color: "#fff !important", // Set text color to white
         },
         "& .MuiDataGrid-footer": {
           backgroundColor: "#21295c",
-          color: "#fff", // Set text color to white
+          color: "#fff !important", // Set text color to white
         },
-        "& .MuiDataGrid-footerPage": {
-          "& span": {
-            color: "#fff", // Change color of pagination text to white
-          },
+        "& .MuiTablePagination-caption": {
+          color: "#fff !important", // Set pagination text color to white
         },
         "& .MuiCheckbox-root": {
           color: "#fff !important", // Set icon color to white
@@ -220,8 +219,6 @@ const Dashboard = () => {
     />
   </Box>
 </Box>
-
-
 
       </Box>
     </Box>
