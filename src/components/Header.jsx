@@ -10,7 +10,7 @@ const Header = ({ title, subtitle }) => {
         fontWeight="bold"
         marginLeft="40px"
         marginTop="25px"
-        
+
       >
         {title}
       </Typography>

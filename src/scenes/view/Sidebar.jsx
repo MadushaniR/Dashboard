@@ -105,7 +105,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
         >
           <ProSidebar>
             <Menu iconShape="square">
-              <div style={{ fontSize: "22px",marginTop:"10px", fontWeight: "700", textAlign: "center", color:'#ffe3a3', marginBottom: "25px", marginTop: "20px" }}>LAVONTECH</div>
+              <div style={{ fontSize: "22px", marginTop: "10px", fontWeight: "700", textAlign: "center", color: '#ffe3a3', marginBottom: "25px", marginTop: "20px" }}>LAVONTECH</div>
               <Box paddingLeft="10%">
                 <Item
                   title="Dashboard"

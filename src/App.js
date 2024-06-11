@@ -11,7 +11,7 @@ function App() {
   // Styles for the height
   const sidebarHeight = isSidebarHidden ? 'calc(100vh - 56px)' : '100vh';
   const mainHeight = isSidebarHidden ? 'calc(100vh - 56px)' : '100vh';
-  const mainOverflowY = isSidebarHidden ? 'auto' : 'hidden'; // Only add vertical scrollbar if sidebar is hidden
+  const mainOverflowY = isSidebarHidden ? 'auto' : 'hidden';
 
   return (
     <div className="app" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', display: 'flex' }}>

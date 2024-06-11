@@ -166,60 +166,59 @@ const Dashboard = () => {
         </Box>
 
         <Box
-  gridColumn={{ xs: "span 1", sm: "span 1", md: "span 6" }}
-  gridRow={{ xs: "span 2", sm: "span 2", md: "span 4", lg: "span 4" }} // Adjust grid row span for large screens
-  backgroundColor="#21295B"
-  p="20px"
-  borderRadius="10px"
-  height="70%"
-  border="none"
->
-  <Box height="100%"  border="none">
-    <DataGrid
-     border="none"
-      rows={mockTransactions}
-      columns={columns}
-      pageSize={10}
-      rowsPerPageOptions={[10]}
-      getRowId={(row) => row.ID}
-      color="#fff" // Set text color to white
-      sx={{
-        "& .MuiDataGrid-root": {
-          border: "none",
-        },
-        "& .MuiDataGrid-cell": {
-          borderBottom: "none",
-          color: "#fff !important", // Set text color to white
-          backgroundColor: "#21295c",
-        },
-        "& .MuiDataGrid-columnHeaders": {
-          backgroundColor: "#21295c",
-          borderBottom: "none",
-          color: "#fff !important", // Set text color to white
-        },
-        "& .MuiDataGrid-virtualScroller": {
-          backgroundColor: "#1F2A40",
-        },
-        "& .MuiDataGrid-footerContainer": {
-          borderTop: "none",
-          backgroundColor: "#21295c",
-          color: "#fff !important", // Set text color to white
-        },
-        "& .MuiDataGrid-footer": {
-          backgroundColor: "#21295c",
-          color: "#fff !important", // Set text color to white
-        },
-        "& .MuiTablePagination-caption": {
-          color: "#fff !important", // Set pagination text color to white
-        },
-        "& .MuiCheckbox-root": {
-          color: "#fff !important", // Set icon color to white
-        },
-      }}
-    />
-  </Box>
-</Box>
-
+          gridColumn={{ xs: "span 1", sm: "span 1", md: "span 6" }}
+          gridRow={{ xs: "span 2", sm: "span 2", md: "span 4", lg: "span 4" }} // Adjust grid row span for large screens
+          backgroundColor="#21295B"
+          p="20px"
+          borderRadius="10px"
+          height="70%"
+          border="none"
+        >
+          <Box height="100%" border="none">
+            <DataGrid
+              border="none"
+              rows={mockTransactions}
+              columns={columns}
+              pageSize={10}
+              rowsPerPageOptions={[10]}
+              getRowId={(row) => row.ID}
+              color="#fff" // Set text color to white
+              sx={{
+                "& .MuiDataGrid-root": {
+                  border: "none",
+                },
+                "& .MuiDataGrid-cell": {
+                  borderBottom: "none",
+                  color: "#fff !important", // Set text color to white
+                  backgroundColor: "#21295c",
+                },
+                "& .MuiDataGrid-columnHeaders": {
+                  backgroundColor: "#21295c",
+                  borderBottom: "none",
+                  color: "#fff !important", // Set text color to white
+                },
+                "& .MuiDataGrid-virtualScroller": {
+                  backgroundColor: "#1F2A40",
+                },
+                "& .MuiDataGrid-footerContainer": {
+                  borderTop: "none",
+                  backgroundColor: "#21295c",
+                  color: "#fff !important", // Set text color to white
+                },
+                "& .MuiDataGrid-footer": {
+                  backgroundColor: "#21295c",
+                  color: "#fff !important", // Set text color to white
+                },
+                "& .MuiTablePagination-caption": {
+                  color: "#fff !important", // Set pagination text color to white
+                },
+                "& .MuiCheckbox-root": {
+                  color: "#fff !important", // Set icon color to white
+                },
+              }}
+            />
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
