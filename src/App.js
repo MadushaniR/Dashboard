@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Topbar from './scenes/view/Topbar';
-import Sidebar from './scenes/view/Sidebar';
-import Dashboard from './scenes/dashboard';
-import Product from './scenes/product';
+import Topbar from './pages/view/Topbar';
+import Sidebar from './pages/view/Sidebar';
+import Dashboard from './pages/dashboard';
+import Product from './pages/product';
 
 function App() {
   const [isSidebarHidden, setIsSidebarHidden] = useState(false);
