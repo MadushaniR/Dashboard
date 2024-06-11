@@ -52,7 +52,34 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
   const [selected, setSelected] = useState('Dashboard');
 
   return (
-    <Box background='#2a2d64' marginTop="-10px" marginLeft="-15px" >
+    <Box sx={{ 
+      background: '#2a2d64',
+      marginTop: "-10px",
+      marginLeft: "-15px",
+      '@media (max-height: 800px)': {
+        '& .pro-sidebar-inner': {
+          height: 'calc(100vh - 56px)',
+        },
+      },
+      '@media (max-height: 600px)': {
+        '& .pro-sidebar-inner': {
+          height: 'calc(100vh - 56px)',
+          fontSize: '14px',
+        },
+        '& .pro-inner-item': {
+          padding: '10px 20px !important',
+        },
+      },
+      '@media (max-height: 400px)': {
+        '& .pro-sidebar-inner': {
+          height: 'calc(100vh - 56px)',
+          fontSize: '12px',
+        },
+        '& .pro-inner-item': {
+          padding: '5px 15px !important',
+        },
+      },
+    }}>
       {!isHidden && (
         <Box
           sx={{
@@ -61,7 +88,7 @@ const Sidebar = ({ isHidden, setIsHidden }) => {
               marginLeft: '-15px',
               width: '270px',
               overflowY: 'auto',
-              height: '113vh',
+              height: 'calc(100vh - 56px)',
             },
             '& .pro-icon-wrapper': {
               backgroundColor: 'transparent !important',
